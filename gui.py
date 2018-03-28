@@ -10,15 +10,15 @@ tk.Label(master, text="密文").grid(row=17,column=0)
 tp = tk.Text(master)
 ts = tk.Text(master)
 
-i = 1
 def s2pfun():
-	v = tp.get(0.0, 'end')
-	ts.insert('insert',v)
+	v = ts.get(0.0, 'end')
+	tp.delete(0.0, 'end')
+	tp.insert('insert',v)
 
 def p2sfun():
-	global i
-	tp.insert('end',str(i))
-	i+=1
+	v = tp.get(0.0, 'end')
+	ts.delete(0.0, 'end')
+	ts.insert('insert',v)
 
 tp.grid(row=0, rowspan=11, column=2)
 ts.grid(row=12, rowspan=11, column=2)
